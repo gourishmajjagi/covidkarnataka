@@ -1,0 +1,5 @@
+.toolbar {
+  background-color: var(--theme-sidebar-color);
+  color: var(--theme-sidebar-text);
+  font-size: 1.5rem;
+}

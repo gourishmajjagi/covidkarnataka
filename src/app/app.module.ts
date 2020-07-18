@@ -3,24 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
-import { ChartDonutComponent } from './shared/chart-donut/chart-donut.component';
-import { ChartLineComponent } from './shared/chart-line/chart-line.component';
+
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChartDonutComponent,
-    ChartLineComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     HighchartsChartModule,
-    DashboardModule
+    DashboardModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

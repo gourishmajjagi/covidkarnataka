@@ -29,6 +29,7 @@
 :root {
   --theme-color-primary: #f97c00;
   --theme-sidebar-color: #263238;
+  --theme-sidebar-text: #a9aaaa;
   --text-color-heading: #37474f;
   --text-color-body: #535b64;
   --error-color: #f44336;
@@ -51,4 +52,26 @@ body {
   background-color: #ededed;
   z-index: -2;
   position: relative;
+}
+
+.width-full {
+  width: 100% !important;
+}
+
+.height-full {
+  height: 100% !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.component-wrapper {
+  margin: 8px;
 }
