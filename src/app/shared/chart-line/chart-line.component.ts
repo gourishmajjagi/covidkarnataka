@@ -72,7 +72,7 @@ export class ChartLineComponent implements OnInit {
   loadBidChartData(): void {
 
     this.chartOptions.series = [{
-      name: 'Possitive',
+      name: 'Positive',
       data: [50, 350, 150, 300],
       color: '#f97c00'
     },

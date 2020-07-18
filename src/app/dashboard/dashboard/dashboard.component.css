@@ -9,10 +9,10 @@
   display: flex;
   max-width: 100%;
   margin: 16PX 0;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-flow: column wrap;
+  justify-content: center;
 }
 
-.width-50 {
-  width: 50% !important;
+.margin-btm {
+  margin-bottom: 16px;
 }
