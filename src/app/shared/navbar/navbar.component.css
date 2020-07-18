@@ -1,5 +1,7 @@
 .toolbar {
-  background-color: var(--theme-sidebar-color);
-  color: var(--theme-sidebar-text);
+  background-color: var(--theme-toolbar-color);
+  color: #fff;
   font-size: 1.5rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .24),
+    0 0 2px rgba(0, 0, 0, .12);
 }

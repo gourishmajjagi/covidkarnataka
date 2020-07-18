@@ -1,6 +1,18 @@
 .page-content {
   box-shadow: 0 2px 2px rgba(0, 0, 0, .24),
     0 0 2px rgba(0, 0, 0, .12);
-  padding: 8px 20px;
+  padding: 12px 20px;
   background-color: #fff;
+}
+
+.flex-grid {
+  display: flex;
+  max-width: 100%;
+  margin: 16PX 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.width-50 {
+  width: 50% !important;
 }

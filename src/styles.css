@@ -29,6 +29,7 @@
 :root {
   --theme-color-primary: #f97c00;
   --theme-sidebar-color: #263238;
+  --theme-toolbar-color: #3f51b5;
   --theme-sidebar-text: #a9aaaa;
   --text-color-heading: #37474f;
   --text-color-body: #535b64;
@@ -73,5 +74,5 @@ body {
 }
 
 .component-wrapper {
-  margin: 8px;
+  margin: 16px 8px;
 }
