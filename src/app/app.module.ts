@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { DashboardModule } from './dashboard/dashboard.module';
-import { HighchartsChartModule } from 'highcharts-angular';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
@@ -21,7 +20,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     RouterModule,
-    HighchartsChartModule,
     DashboardModule,
     BrowserAnimationsModule,
     MatToolbarModule,

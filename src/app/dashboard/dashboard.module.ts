@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -16,7 +17,8 @@ import { ChartLineComponent } from '../shared/chart-line/chart-line.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MatCardModule
+    MatCardModule,
+    HighchartsChartModule
   ]
 })
 export class DashboardModule { }
