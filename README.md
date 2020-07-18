@@ -1,0 +1,1 @@
+# covidkarnataka
