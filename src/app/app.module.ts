@@ -7,6 +7,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { AppComponent } from './app.component';
 import { ChartDonutComponent } from './shared/chart-donut/chart-donut.component';
 import { ChartLineComponent } from './shared/chart-line/chart-line.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ChartLineComponent } from './shared/chart-line/chart-line.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     HighchartsChartModule,
     DashboardModule
   ],
