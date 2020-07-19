@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import * as Highcharts from 'highcharts';
 
@@ -17,7 +17,7 @@ export class ChartDonutComponent implements OnInit {
     chart: {
       type: 'pie',
       style: {
-        fontFamily: 'Roboto, "Helvetica Neue", sans-serif;'
+        fontFamily: ' Roboto, "Helvetica Neue", sans-serif;'
       },
     },
     title: {
@@ -49,28 +49,27 @@ export class ChartDonutComponent implements OnInit {
     series: []
   }
 
+
   constructor() { }
 
+  @Input("chartData")
+  set setData(data: string) {
+    console.log(data);
+    this.loadBidChartData(data)
+  }
+
   ngOnInit() {
-    this.chartOptions.series = [{
-      name: '',
-      data: []
-    }];
-    this.loadBidChartData()
+    // this.chartOptions.series = [{
+    //   name: '',
+    //   data: []
+    // }];
+    // this.loadBidChartData()
     // setInterval(() => this.loadBidChartData(), 1000);
   }
 
-  loadBidChartData(): void {
-
-    this.chartOptions.series = [{
-      name: '',
-      data: [
-        ['Positive', 8],
-        ['Death', 3],
-        ['Recoveries', 1],
-      ]
-    }
-    ];
+  loadBidChartData(data): void {
+    this.chartOptions.title.text = data.title;
+    this.chartOptions.series = data.series;
     this.updateFlag = true;
   }
 

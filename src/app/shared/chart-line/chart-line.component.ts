@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import * as Highcharts from 'highcharts';
 
@@ -38,9 +38,6 @@ export class ChartLineComponent implements OnInit {
         text: 'Number of cases'
       },
       labels: {
-        // formatter: function () {
-        //   return this.value + '°';
-        // }
       }
     },
     tooltip: {
@@ -48,45 +45,23 @@ export class ChartLineComponent implements OnInit {
       shared: true
     },
     plotOptions: {
-      // spline: {
-      //   marker: {
-      //     radius: 4,
-      //     lineColor: '#666666',
-      //     lineWidth: 1
-      //   }
-      // }
     },
     series: []
   };
   constructor() { }
 
   ngOnInit() {
-    this.chartOptions.series = [{
-      name: '',
-      data: []
-    }];
-    this.loadBidChartData()
-    // setInterval(() => this.loadBidChartData(), 1000);
   }
 
-  loadBidChartData(): void {
 
-    this.chartOptions.series = [{
-      name: 'Positive',
-      data: [50, 350, 150, 300],
-      color: '#f97c00'
-    },
-    {
-      name: 'Death',
-      data: [2, 140, 66, 35],
-      color: '#263238'
-    },
-    {
-      name: 'Recoveries',
-      data: [25, 50, 100, 250],
-      color: '#90ed7d'
-    }
-    ];
+  @Input("chartData")
+  set setData(data: string) {
+    this.loadBidChartData(data);
+  }
+
+  loadBidChartData(data): void {
+    this.chartOptions.title.text = data.title;
+    this.chartOptions.series = [...data.series];
     this.updateFlag = true;
   }
 }
