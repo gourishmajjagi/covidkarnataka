@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,61 +12,30 @@ export class DashboardComponent implements OnInit {
   presentDay: any;
   monthAvg: any;
 
-  constructor() { }
+  constructor(
+    private httpService: HttpService
+  ) { }
 
   ngOnInit() {
-    this.getMonthAvgData();
-    this.getTillDateData();
-    this.getPresentDayData();
+    this.getData();
   }
 
-  getMonthAvgData() {
-    this.monthAvg = {
-      title: "Covid Meter",
-      series: [{
-        name: 'Positive',
-        data: [50, 350, 150, 300],
-        color: '#f97c00'
-      },
-      {
-        name: 'Death',
-        data: [2, 140, 66, 35],
-        color: '#263238'
-      },
-      {
-        name: 'Recoveries',
-        data: [25, 50, 100, 250],
-        color: '#90ed7d'
-      }
-      ]
-    }
+  getData() {
+    this.httpService.getCovidData().subscribe((data: any[]) => {
+      data.forEach(elem => {
+
+        if (elem.id === 'monthlyRecords') {
+          this.monthAvg = elem;
+        }
+        if (elem.id === 'tilDate') {
+          this.tillDate = elem;
+        }
+
+        if (elem.id === 'presentDay') {
+          this.presentDay = elem;
+        }
+      });
+    });
   }
-  getTillDateData() {
-    this.tillDate = {
-      title: "Covid Cases Till Date",
-      series: [{
-        name: '',
-        data: [
-          ['Positive', 8],
-          ['Death', 3],
-          ['Recoveries', 1],
-        ]
-      }
-      ]
-    }
-  }
-  getPresentDayData() {
-    this.presentDay = {
-      title: "Covid Cases Today",
-      series: [{
-        name: '',
-        data: [
-          ['Positive', 8],
-          ['Death', 3],
-          ['Recoveries', 1],
-        ]
-      }
-      ]
-    }
-  }
+
 }
