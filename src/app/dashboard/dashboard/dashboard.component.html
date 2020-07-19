@@ -1,16 +1,22 @@
-  <div class="dashboard-wrapper">
-    <mat-card class="page-content margin-btm">
-      <app-chart-line [chartData]="monthAvg">
-      </app-chart-line>
-    </mat-card>
+  <div class="dashboard-wrapper" *ngIf="presentDay && tillDate && monthAvg">
+
     <div class="flex-grid">
-      <mat-card class="page-content margin-btm">
-        <app-chart-donut [chartData]="tillDate">
-        </app-chart-donut>
-      </mat-card>
+
       <mat-card class="page-content margin-btm">
         <app-chart-donut [chartData]="presentDay">
         </app-chart-donut>
       </mat-card>
+
+      <mat-card class="page-content margin-btm">
+        <app-chart-donut [chartData]="tillDate">
+        </app-chart-donut>
+      </mat-card>
+
     </div>
+
+    <mat-card class="page-content margin-btm">
+      <app-chart-line [chartData]="monthAvg">
+      </app-chart-line>
+    </mat-card>
+
   </div>

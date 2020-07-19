@@ -54,7 +54,6 @@ export class ChartDonutComponent implements OnInit {
 
   @Input("chartData")
   set setData(data: string) {
-    console.log(data);
     this.loadBidChartData(data)
   }
 
