@@ -18,7 +18,7 @@ export class ChartDonutComponent implements OnInit {
       type: 'pie',
       style: {
         fontFamily: 'Roboto, "Helvetica Neue", sans-serif;'
-      }
+      },
     },
     title: {
       text: 'Total Cases Today'
@@ -26,30 +26,52 @@ export class ChartDonutComponent implements OnInit {
     subtitle: {
       text: 'Source: Hubballi Dharwad Muncipal Corporation'
     },
+    credits: {
+      enabled: false
+    },
     plotOptions: {
       pie: {
-        innerSize: 50,
-        depth: 45,
+        innerSize: 80,
         colors: ['#f97c00', '#263238', '#90ed7d'],
         dataLabels: {
-          enabled: false
+          enabled: true,
+          format: '<b>{point.y}',
+          distance: -50,
+          style: {
+            color: '#fff',
+            textShadow: false,
+            textOutline: false
+          }
         },
         showInLegend: true
       }
     },
-    series: [{
-      name: 'Delivered amount',
-      data: [
-        ['Positive', 8],
-        ['Death', 3],
-        ['Recoveries', 1],
-      ]
-    }]
+    series: []
   }
 
   constructor() { }
 
   ngOnInit() {
+    this.chartOptions.series = [{
+      name: '',
+      data: []
+    }];
+    this.loadBidChartData()
+    // setInterval(() => this.loadBidChartData(), 1000);
+  }
+
+  loadBidChartData(): void {
+
+    this.chartOptions.series = [{
+      name: '',
+      data: [
+        ['Positive', 8],
+        ['Death', 3],
+        ['Recoveries', 1],
+      ]
+    }
+    ];
+    this.updateFlag = true;
   }
 
 }

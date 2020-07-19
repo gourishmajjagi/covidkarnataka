@@ -76,3 +76,34 @@ body {
 .component-wrapper {
   margin: 16px 8px;
 }
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .flex-grid {
+    display: flex;
+    max-width: 100%;
+    margin: 16PX 0;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .flex-grid {
+    display: flex;
+    max-width: 100%;
+    margin: 16PX 0;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+/*  Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
