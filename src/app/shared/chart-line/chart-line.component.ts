@@ -24,10 +24,10 @@ export class ChartLineComponent implements OnInit {
       text: 'Monthly Average Covid-19 Cases'
     },
     subtitle: {
-      text: 'Source: Hubballi Dharwad Muncipal Corporation'
+      text: 'Source: Covid-19 Information Portal karnataka'
     },
     xAxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      categories: ['Mar', 'Apr', 'May', 'Jun',
         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     },
     credits: {

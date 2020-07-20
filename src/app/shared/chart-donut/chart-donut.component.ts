@@ -16,6 +16,7 @@ export class ChartDonutComponent implements OnInit {
   chartOptions = {
     chart: {
       type: 'pie',
+      height: 300,
       style: {
         fontFamily: ' Roboto, "Helvetica Neue", sans-serif;'
       },
@@ -24,21 +25,21 @@ export class ChartDonutComponent implements OnInit {
       text: 'Total Cases Today'
     },
     subtitle: {
-      text: 'Source: Hubballi Dharwad Muncipal Corporation'
+      text: 'Source: Covid-19 Information Portal karnataka'
     },
     credits: {
       enabled: false
     },
     plotOptions: {
       pie: {
-        innerSize: 80,
-        colors: ['#f97c00', '#263238', '#90ed7d'],
+
+        innerSize: 100,
         dataLabels: {
           enabled: true,
           format: '<b>{point.y}',
-          distance: -50,
+          distance: 10,
           style: {
-            color: '#fff',
+            color: '#000',
             textShadow: false,
             textOutline: false
           }
