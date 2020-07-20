@@ -25,7 +25,7 @@ export class ChartDonutComponent implements OnInit {
       text: 'Total Cases Today'
     },
     subtitle: {
-      text: 'Source: Covid-19 Information Portal karnataka'
+      text: 'Source: Covid-19 Information Portal Karnataka'
     },
     credits: {
       enabled: false
