@@ -23,18 +23,24 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <mat-card class="page-content margin-btm">
-      <div class="flex-grid">
-        <div>
+    <div class="flex-grid">
+      <div>
+        <mat-card class="page-content margin-btm">
+
           <app-chart-donut [chartData]="presentDay">
           </app-chart-donut>
-        </div>
-        <div>
+        </mat-card>
+
+      </div>
+      <div>
+        <mat-card class="page-content margin-btm">
+
           <app-chart-donut [chartData]="tillDate">
           </app-chart-donut>
-        </div>
+        </mat-card>
+
       </div>
-    </mat-card>
+    </div>
     <mat-card class="page-content margin-btm">
       <app-chart-line [chartData]="monthAvg">
       </app-chart-line>
