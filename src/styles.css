@@ -73,10 +73,20 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.component-wrapper {
-  margin: 16px 8px;
-}
+@media (max-width: 576px) {
+  .flex-grid {
+    display: flex;
+    max-width: 100%;
+    margin: 16PX 0;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
+  .component-wrapper {
+    margin: 68px 16px 8px;
+  }
+}
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -87,6 +97,10 @@ body {
     flex-flow: column;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .component-wrapper {
+    margin: 68px 16px 8px;
   }
 }
 
@@ -99,6 +113,10 @@ body {
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .component-wrapper {
+    margin: 80px 16px 8px;
   }
 }
 

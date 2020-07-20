@@ -1,6 +1,6 @@
   <div class="dashboard-wrapper" *ngIf="presentDay && tillDate && monthAvg">
 
-    <div class="flex-grid">
+    <!-- <div class="flex-grid">
 
       <mat-card class="page-content margin-btm">
         <app-chart-donut [chartData]="presentDay">
@@ -12,11 +12,23 @@
         </app-chart-donut>
       </mat-card>
 
-    </div>
+    </div> -->
+
+    <mat-card class="page-content margin-btm">
+      <div class="flex-grid">
+        <div>
+          <app-chart-donut [chartData]="presentDay">
+          </app-chart-donut>
+        </div>
+        <div>
+          <app-chart-donut [chartData]="tillDate">
+          </app-chart-donut>
+        </div>
+      </div>
+    </mat-card>
 
     <mat-card class="page-content margin-btm">
       <app-chart-line [chartData]="monthAvg">
       </app-chart-line>
     </mat-card>
-
   </div>
