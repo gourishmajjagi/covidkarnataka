@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -20,7 +21,8 @@ import { ChartLineComponent } from '../shared/chart-line/chart-line.component';
     DashboardRoutingModule,
     MatCardModule,
     HighchartsChartModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ]
 })
 export class DashboardModule { }

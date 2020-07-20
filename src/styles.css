@@ -86,6 +86,10 @@ body {
   .component-wrapper {
     margin: 68px 16px 8px;
   }
+
+  .mat-form-field {
+    width: 142px !important;
+  }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -99,8 +103,8 @@ body {
     justify-content: space-between;
   }
 
-  .component-wrapper {
-    margin: 68px 16px 8px;
+  .mat-form-field {
+    width: 142px !important;
   }
 }
 

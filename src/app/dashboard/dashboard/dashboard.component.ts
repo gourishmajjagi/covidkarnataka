@@ -8,6 +8,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class DashboardComponent implements OnInit {
 
+  location: any;
   tillDate: any;
   presentDay: any;
   monthAvg: any;
@@ -18,6 +19,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.location = 'Dharwad';
   }
 
   getData() {
