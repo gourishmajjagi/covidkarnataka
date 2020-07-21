@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { LocalStorageService } from '../../services/local-storage.service';
 
+import { AngularFireAnalytics } from '@angular/fire/analytics';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -16,7 +18,8 @@ export class DashboardComponent implements OnInit {
   lastUpdate: string;
   constructor(
     private httpService: HttpService,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private analytics: AngularFireAnalytics
   ) { }
 
   ngOnInit() {
@@ -35,6 +38,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getData() {
+    this.analytics.logEvent('get covid data', this.location);
     this.httpService.getCovidData().subscribe((data: any[]) => {
       const districtData: any = data.filter(elem => elem.district === this.location);
       this.lastUpdate = districtData[0].updatedOn;

@@ -5,7 +5,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire/analytics';
 
 import { AppComponent } from './app.component';
 
@@ -30,7 +30,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAnalyticsModule
   ],
-  providers: [],
+  providers: [ScreenTrackingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
