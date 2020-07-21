@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from 'src/app/services/http.service';
+import { HttpService } from '../../services/http.service';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,17 +15,28 @@ export class DashboardComponent implements OnInit {
   monthAvg: any;
 
   constructor(
-    private httpService: HttpService
+    private httpService: HttpService,
+    private localStorageService: LocalStorageService
   ) { }
 
   ngOnInit() {
+    this.initLocation();
     this.getData();
-    this.location = 'Dharwad';
+  }
+
+  initLocation() {
+    const locationHistory = this.localStorageService.getLocation();
+    if (locationHistory === null) {
+      this.location = 'dharwad';
+    } else {
+      this.location = locationHistory;
+    }
   }
 
   getData() {
     this.httpService.getCovidData().subscribe((data: any[]) => {
-      data.forEach(elem => {
+      const districtData: any = data.filter(elem => elem.district === this.location);
+      districtData[0].data.forEach(elem => {
 
         if (elem.id === 'monthlyRecords') {
           this.monthAvg = elem;
@@ -40,4 +52,8 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  locationUpdate(event) {
+    this.localStorageService.setLocation(event.value);
+
+  }
 }
