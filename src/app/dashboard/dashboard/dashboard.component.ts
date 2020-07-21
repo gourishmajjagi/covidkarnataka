@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   tillDate: any;
   presentDay: any;
   monthAvg: any;
-
+  lastUpdate: string;
   constructor(
     private httpService: HttpService,
     private localStorageService: LocalStorageService
@@ -32,12 +32,12 @@ export class DashboardComponent implements OnInit {
     }
 
     this.getData();
-
   }
 
   getData() {
     this.httpService.getCovidData().subscribe((data: any[]) => {
       const districtData: any = data.filter(elem => elem.district === this.location);
+      this.lastUpdate = districtData[0].updatedOn;
       districtData[0].data.forEach(elem => {
 
         if (elem.id === 'monthlyRecords') {
