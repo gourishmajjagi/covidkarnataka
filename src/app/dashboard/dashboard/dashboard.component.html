@@ -17,9 +17,11 @@
     <div class="location-box">
       <mat-form-field>
         <mat-select [(value)]="location" (selectionChange)="locationUpdate($event)">
+          <mat-option value="Belagavi" disabled>Belagavi</mat-option>
           <mat-option value="dharwad">Dharwad</mat-option>
           <mat-option value="davanagere">Davanagere</mat-option>
-          <mat-option value="Belagavi" disabled>Belagavi</mat-option>
+          <mat-option value="Gadag" disabled>Gadag</mat-option>
+          <mat-option value="vijayapura" disabled>vijayapura</mat-option>
         </mat-select>
       </mat-form-field>
     </div>

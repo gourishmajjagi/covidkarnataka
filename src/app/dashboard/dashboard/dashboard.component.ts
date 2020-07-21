@@ -21,7 +21,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.initLocation();
-    this.getData();
   }
 
   initLocation() {
@@ -31,6 +30,9 @@ export class DashboardComponent implements OnInit {
     } else {
       this.location = locationHistory;
     }
+
+    this.getData();
+
   }
 
   getData() {
@@ -54,6 +56,7 @@ export class DashboardComponent implements OnInit {
 
   locationUpdate(event) {
     this.localStorageService.setLocation(event.value);
+    this.getData();
 
   }
 }
