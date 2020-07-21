@@ -54,7 +54,7 @@ export class ChartLineComponent implements OnInit {
   }
 
 
-  @Input("chartData")
+  @Input('chartData')
   set setData(data: string) {
     this.loadBidChartData(data);
   }
